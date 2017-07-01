@@ -1,3 +1,28 @@
 @import "~normalize.css";
+@import "./src/sass/colors";
 
-$color-white: #fff;
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: $color-white-grey;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  height: auto;
+}
