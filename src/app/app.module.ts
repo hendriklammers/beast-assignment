@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from './shared/shared.module';
+import { EditorModule } from './editor/editor.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -10,6 +11,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    EditorModule,
     SharedModule
   ],
   providers: [],
