@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex: 0 0 60px;
+  justify-content: center;
+  background: #fff;
+}
+
+.logo {
+  margin: 0;
+  align-self: center;
+
+  a {
+    display: block;
+  }
+}
