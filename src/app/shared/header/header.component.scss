@@ -1,8 +1,10 @@
+@import "./src/sass/colors";
+
 :host {
   display: flex;
   flex: 0 0 60px;
   justify-content: center;
-  background: #fff;
+  background: $color-white;
 }
 
 .logo {
