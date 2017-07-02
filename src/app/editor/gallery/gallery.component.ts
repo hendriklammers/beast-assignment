@@ -8,11 +8,14 @@ import { DataService } from '../../shared/services/data.service';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
+  private images = [];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService.getImageData()
-      .subscribe(data => console.log(data), err => console.log('error', err));
+      .subscribe(data => {
+        this.images = data;
+      });
   }
 }

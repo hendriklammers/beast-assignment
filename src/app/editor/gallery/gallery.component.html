@@ -1,5 +1,13 @@
-<ul id="gallery-list" class="gallery__list">
-  <li id="gallery-item-1" class="gallery__item">
-    <img src="img/1.jpeg" alt="Random image">
-  </li>
-</ul>
+<div class="gallery">
+  <ul class="gallery__list">
+    <li
+      *ngFor="let image of images"
+      [id]="image.id"
+      class="gallery__item">
+      <img
+        src="{{image.thumb}}"
+        class="gallery__image"
+        alt="gallery image: {{image.id}}">
+    </li>
+  </ul>
+</div>
