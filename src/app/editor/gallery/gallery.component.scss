@@ -2,20 +2,20 @@
 @import "../../../sass/_easing";
 
 :host {
-  width: 300px;
-  background: $color-white;
-  overflow-y: scroll;
+  // width: 300px;
 }
 
 .gallery {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+
   &__list {
     position: relative;
     flex: 1;
     display: flex;
     flex-wrap: wrap;
-    // flex-direction: row;
-    // justify-content: space-between;
-    // align-content: space-between;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -23,22 +23,10 @@
 
   &__item {
     position: relative;
-    width: 75px;
-    height: 75px;
+    width: 100%;
+    // height: 75px;
     cursor: grab;
     background: $color-grey-dark;
-    touch-action: none;
-
-    img {
-      width: 100%;
-      transition: opacity 0.3s $easeOutCirc;
-    }
-
-    &--active {
-      img {
-        opacity: 0.3;
-      }
-    }
 
     &--selected {
       img {
@@ -73,29 +61,4 @@
   0% { height: 0; width: 0; }
   30% { height: 0; width: 10px; }
   100% { height: 20px; width: 10px; }
-}
-
-#drag {
-  // display: none;
-  visibility: hidden;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 75px;
-  height: 75px;
-  transform: none;
-  box-shadow: none;
-  cursor: grab;
-
-  &.dragging {
-    visibility: visible;
-    // display: block;
-    box-shadow: 0 4px 5px $color-shadow;
-    transform: scale(1.28); // 1.28 = 96px
-    transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
-  }
-
-  img {
-    width: 100%;
-  }
 }

@@ -1,0 +1,21 @@
+// These classes are added by the Dragula library
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  box-shadow: 0 4px 5px $color-shadow;
+  opacity: 1;
+  // opacity: 0.8;
+}
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  user-select: none !important;
+}
+
+.gu-transit {
+  opacity: 0.2;
+}

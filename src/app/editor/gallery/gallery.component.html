@@ -1,13 +1,29 @@
+<!-- <div -->
+<!--   id="gallery" -->
+<!--   class="gallery" -->
+<!--   [dragula]="'images'"> -->
+<!--   <iw&#45;image -->
+<!--     *ngFor="let image of images" -->
+<!--     [id]="image.id" -->
+<!--     [src]="image.thumb" -->
+<!--     > -->
+<!--   </iw&#45;image> -->
+<!-- </div> -->
 <div class="gallery">
-  <ul class="gallery__list" [dragula]="'bag-one'">
+  <ul class="gallery__list">
     <li
       *ngFor="let image of images"
-      [id]="image.id"
+      iwDelayDrag
+      [dragula]="'images'"
       class="gallery__item">
-      <img
-        src="{{image.thumb}}"
-        class="gallery__image"
-        alt="gallery image: {{image.id}}">
+      <iw-image
+        [id]="image.id"
+        [src]="image.thumb">
+      </iw-image>
+      <!-- <img -->
+      <!--   src="{{image.thumb}}" -->
+      <!--   class="gallery__image" -->
+      <!--   alt="gallery image: {{image.id}}"> -->
     </li>
   </ul>
 </div>

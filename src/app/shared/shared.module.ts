@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DragulaModule } from 'ng2-dragula';
 
 import { HeaderComponent } from './header/header.component';
+import { DelayDragDirective } from './directives/delay-drag.directive';
 
 @NgModule({
   imports: [
@@ -10,12 +11,14 @@ import { HeaderComponent } from './header/header.component';
     DragulaModule
   ],
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    DelayDragDirective
   ],
   exports: [
     CommonModule,
     HeaderComponent,
-    DragulaModule
+    DragulaModule,
+    DelayDragDirective
   ]
 })
 export class SharedModule { }

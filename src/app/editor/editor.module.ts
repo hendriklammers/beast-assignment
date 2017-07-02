@@ -5,6 +5,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { SharedModule } from '../shared/shared.module';
 import { DataService } from '../shared/services/data.service';
 import { GridComponent } from './grid/grid.component';
+import { ImageComponent } from './image/image.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { GridComponent } from './grid/grid.component';
   declarations: [
     EditorComponent,
     GalleryComponent,
-    GridComponent
+    GridComponent,
+    ImageComponent
   ],
   exports: [
     EditorComponent

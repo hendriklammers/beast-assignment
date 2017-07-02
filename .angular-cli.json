@@ -20,7 +20,6 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "iw",
       "styles": [
-        "../node_modules/dragula/dist/dragula.css",
         "styles.scss"
       ],
       "scripts": [],

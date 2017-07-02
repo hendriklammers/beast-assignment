@@ -1,0 +1,16 @@
+@import "../../../sass/_colors";
+@import "../../../sass/_easing";
+
+:host {
+  display: block;
+  position: relative;
+  // width: 75px;
+  // height: 75px;
+  cursor: grab;
+  background: $color-grey-dark;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

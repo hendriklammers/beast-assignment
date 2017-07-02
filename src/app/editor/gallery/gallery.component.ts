@@ -10,7 +10,9 @@ import { DataService } from '../../shared/services/data.service';
 export class GalleryComponent implements OnInit {
   private images = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+
+  }
 
   ngOnInit() {
     this.dataService.getImageData()

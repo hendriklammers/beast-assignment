@@ -1,4 +1,17 @@
+@import "../../sass/_colors";
+
 :host {
   display: flex;
+  flex: 1;
+}
+
+.gallery {
+  overflow-y: scroll;
+  background: $color-white;
+  // width: 75px;
+  flex: 0 0 75px;
+}
+
+.grid {
   flex: 1;
 }

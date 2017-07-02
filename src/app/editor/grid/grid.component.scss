@@ -1,10 +1,19 @@
 @import "../../../sass/_colors";
 
+$item-size: 75px;
+$spacing: 3px;
+$grid-size: (3 * $item-size + (4 * $spacing));
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
 .grid {
   display: flex;
   margin: 20px;
-  width: 304px;
-  height: 304px;
+  width: $grid-size;
+  height: $grid-size;
   background: $color-white;
   box-shadow: 0 2px 5px rgba($color-grey-light, 0.3);
 
@@ -17,12 +26,18 @@
     align-content: space-between;
     list-style: none;
     margin: 0;
-    padding: 4px;
+    padding: 3px;
   }
 
   &__item {
-    width: 96px;
-    height: 96px;
+    position: relative;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
     background: $color-grey-light;
+
+    img {
+      width: 96px;
+    }
   }
 }
