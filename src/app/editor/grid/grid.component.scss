@@ -1,0 +1,28 @@
+@import "../../../sass/_colors";
+
+.grid {
+  display: flex;
+  margin: 20px;
+  width: 304px;
+  height: 304px;
+  background: $color-white;
+  box-shadow: 0 2px 5px rgba($color-grey-light, 0.3);
+
+  &__list {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 4px;
+  }
+
+  &__item {
+    width: 96px;
+    height: 96px;
+    background: $color-grey-light;
+  }
+}
