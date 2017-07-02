@@ -12,6 +12,7 @@ export class DataService {
 
   constructor(private http: Http) {}
 
+  // Returns Observable with json
   getImageData() {
     return this.http.get(this.url)
       .map(res => res.json());

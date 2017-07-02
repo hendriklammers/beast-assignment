@@ -4,7 +4,6 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'iw-image',
   templateUrl: './image.component.html',
   styleUrls: ['./image.component.scss'],
-  // encapsulation: ViewEncapsulation.None
 })
 export class ImageComponent {
   @Input() src: string;

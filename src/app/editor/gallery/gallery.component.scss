@@ -2,10 +2,6 @@
 @import "../../../sass/_easing";
 @import "../../../sass/_breakpoints";
 
-:host {
-  // width: 300px;
-}
-
 .gallery {
   position: relative;
   flex: 1;
@@ -39,38 +35,5 @@
     @include breakpoint(large) {
       width: calc(100% / 4);
     }
-
-    &--selected {
-      img {
-        opacity: 0.3;
-      }
-
-      &::after {
-        transform-origin: left top;
-
-        // The borders
-        border-right: 3px solid $color-white;
-        border-top: 3px solid $color-white;
-
-        content: '';
-        display: block;
-        height: 20px;
-        left: 50%;
-        margin-left: -10px;
-        position: absolute;
-        z-index: 3;
-        top: 50%;
-        width: 10px;
-
-        animation: 0.5s $easeOutSine checkmark;
-        transform: scaleX(-1) rotate(135deg);
-      }
-    }
   }
-}
-
-@keyframes checkmark {
-  0% { height: 0; width: 0; }
-  30% { height: 0; width: 10px; }
-  100% { height: 20px; width: 10px; }
 }

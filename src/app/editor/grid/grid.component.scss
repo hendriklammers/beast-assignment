@@ -60,9 +60,30 @@
     height: $item-size;
     overflow: hidden;
     background: $color-grey-light;
+
+    &--dropped {
+      animation: shake 0.3s linear both;
+    }
   }
 }
 
 @include grid-size(small, 96px, 4px);
 @include grid-size(large, 120px, 5px);
-@include grid-size(wide, 150px, 6px);
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  30% {
+    transform: translate(2px, 4px) rotate(1deg);
+  }
+  60% {
+    transform: translate(-1px, -3px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(0px, 1px) rotate(1deg);
+  }
+  100% {
+    transform: none;
+  }
+}
