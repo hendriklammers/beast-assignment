@@ -1,8 +1,31 @@
 @import "../../../sass/_colors";
+@import "../../../sass/_breakpoints";
 
-$item-size: 75px;
-$spacing: 3px;
-$grid-size: (3 * $item-size + (4 * $spacing));
+// Calculates width and height of grid based on item size
+@function calc-gridsize($item-size, $spacing: 3px) {
+  @return (3 * $item-size + (4 * $spacing))
+}
+
+// Sets values for all necessary properties per breakpoint
+@mixin grid-size($breakpoint, $item-size, $spacing) {
+  @include breakpoint($breakpoint) {
+    .grid {
+      $item-size: $item-size;
+
+      width: calc-gridsize($item-size, $spacing);
+      height: calc-gridsize($item-size, $spacing);
+
+      &__list {
+        padding: $spacing;
+      }
+
+      &__item {
+        width: $item-size;
+        height: $item-size;
+      }
+    }
+  }
+}
 
 :host {
   display: flex;
@@ -10,10 +33,12 @@ $grid-size: (3 * $item-size + (4 * $spacing));
 }
 
 .grid {
+  $item-size: 75px;
+
   display: flex;
-  margin: 20px;
-  width: $grid-size;
-  height: $grid-size;
+  margin: 20px 0;
+  width: calc-gridsize($item-size);
+  height: calc-gridsize($item-size);
   background: $color-white;
   box-shadow: 0 2px 5px rgba($color-grey-light, 0.3);
 
@@ -31,13 +56,13 @@ $grid-size: (3 * $item-size + (4 * $spacing));
 
   &__item {
     position: relative;
-    width: 75px;
-    height: 75px;
+    width: $item-size;
+    height: $item-size;
     overflow: hidden;
     background: $color-grey-light;
-
-    img {
-      width: 96px;
-    }
   }
 }
+
+@include grid-size(small, 96px, 4px);
+@include grid-size(large, 120px, 5px);
+@include grid-size(wide, 150px, 6px);

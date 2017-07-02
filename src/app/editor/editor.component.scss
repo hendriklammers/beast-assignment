@@ -1,4 +1,5 @@
 @import "../../sass/_colors";
+@import "../../sass/_breakpoints";
 
 :host {
   display: flex;
@@ -8,8 +9,23 @@
 .gallery {
   overflow-y: scroll;
   background: $color-white;
-  // width: 75px;
   flex: 0 0 75px;
+
+  @include breakpoint(tiny) {
+    flex: 0 0 150px;
+  }
+
+  @include breakpoint(small) {
+    flex: 0 0 225px;
+  }
+
+  @include breakpoint(medium) {
+    flex: 0 0 300px;
+  }
+
+  @include breakpoint(large) {
+    flex: 0 0 400px;
+  }
 }
 
 .grid {

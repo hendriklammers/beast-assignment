@@ -1,0 +1,14 @@
+// All used mediaquery breakpoints
+$breakpoints: (
+    tiny: 480px,
+    small: 600px,
+    medium: 768px,
+    large: 960px,
+    wide: 1140px
+);
+
+@mixin breakpoint($name) {
+    @media (min-width: map-get($breakpoints, $name)) {
+        @content;
+    }
+}
