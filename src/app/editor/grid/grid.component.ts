@@ -1,14 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-class GridBlock {
-  active = false;
-  image: string;
-
-  constructor(
-    public x: number,
-    public y: number
-  ) {}
-}
+import { GridBlock } from './grid-block.model';
 
 @Component({
   selector: 'iw-grid',
@@ -16,9 +8,7 @@ class GridBlock {
   styleUrls: ['./grid.component.scss']
 })
 export class GridComponent implements OnInit {
-  private blocks: GridBlock[] = [];
-
-  constructor() { }
+  blocks: GridBlock[] = [];
 
   ngOnInit() {
     this.blocks = this.createGrid(3, 3);

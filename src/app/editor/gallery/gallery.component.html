@@ -1,5 +1,5 @@
 <div class="gallery">
-  <ul class="gallery__list">
+  <ul class="gallery__list" [dragula]="'bag-one'">
     <li
       *ngFor="let image of images"
       [id]="image.id"

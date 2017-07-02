@@ -1,5 +1,9 @@
 <div class="grid">
   <ul class="grid__list">
-    <li *ngFor="let block of blocks" class="grid__item"></li>
+    <li
+      *ngFor="let block of blocks"
+      [dragula]="'bag-one'"
+      class="grid__item">
+    </li>
   </ul>
 </div>
