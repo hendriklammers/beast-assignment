@@ -1,5 +1,6 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
 
+// Used to add some delay before drag event gets triggered on touch devices
 @Directive(
   { selector: '[iwDelayDrag]' }
 )
@@ -9,7 +10,6 @@ export class DelayDragDirective {
   touchTimeout: any;
 
   @HostListener('touchmove', ['$event'])
-  // @HostListener('mousemove', ['$event'])
   onMove(e: Event) {
     if (!this.draggable) {
       e.stopPropagation();
@@ -18,7 +18,6 @@ export class DelayDragDirective {
   }
 
   @HostListener('touchstart', ['$event'])
-  // @HostListener('mousedown', ['$event'])
   onDown(e: Event) {
     this.touchTimeout = setTimeout(() => {
       this.draggable = true;
@@ -26,7 +25,6 @@ export class DelayDragDirective {
   }
 
   @HostListener('touchend', ['$event'])
-  // @HostListener('mouseup', ['$event'])
   onUp(e: Event) {
     clearTimeout(this.touchTimeout);
     this.draggable = false;
