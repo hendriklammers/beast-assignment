@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DragulaService } from 'ng2-dragula';
 
 @Component({
@@ -6,7 +6,7 @@ import { DragulaService } from 'ng2-dragula';
   templateUrl: './editor.component.html',
   styleUrls: ['./editor.component.scss']
 })
-export class EditorComponent implements OnInit {
+export class EditorComponent implements OnInit, OnDestroy {
 
   constructor(private dragulaService: DragulaService) {
     // dragula configuration
@@ -31,17 +31,27 @@ export class EditorComponent implements OnInit {
   ngOnInit() {
     // Listen for drag and remove events to add classes that can be used
     // for css animation
-    this.dragulaService.drop.subscribe(args => {
-      const target = args[2];
-      target.classList.add('grid__item--dropped');
+    this.dragulaService.drop.subscribe(this.onDrop);
+    this.dragulaService.remove.subscribe(this.onRemove);
+  }
 
-      const source = args[3];
-      source.classList.remove('grid__item--dropped');
-    });
+  ngOnDestroy() {
+    // Remove subscriptions to when component is destroyed
+    this.dragulaService.drop.unsubscribe();
+    this.dragulaService.remove.unsubscribe();
+  }
 
-    this.dragulaService.remove.subscribe(args => {
-      const container = args[2];
-      container.classList.remove('grid__item--dropped');
-    })
+  private onDrop(args): void {
+    // grid__item--dropped class is used to trigger the shake animation
+    const target = args[2];
+    target.classList.add('grid__item--dropped');
+
+    const source = args[3];
+    source.classList.remove('grid__item--dropped');
+  }
+
+  private onRemove(args): void {
+    const container = args[2];
+    container.classList.remove('grid__item--dropped');
   }
 }

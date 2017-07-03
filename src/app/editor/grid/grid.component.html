@@ -3,6 +3,8 @@
     <li
       *ngFor="let block of blocks"
       [dragula]="'images'"
+      [attr.data-x]="block.x"
+      [attr.data-y]="block.y"
       class="grid__item">
     </li>
   </ul>
